@@ -23,9 +23,6 @@ import kotlinx.coroutines.withContext
 import java.io.IOException
 import java.net.URL
 
-/**
- * A placeholder fragment containing a simple view.
- */
 class PlaceholderFragment : Fragment() {
 
     private lateinit var pageViewModel: PageViewModel
@@ -43,11 +40,9 @@ class PlaceholderFragment : Fragment() {
     private lateinit var deg: TextView
 
     private val API_KEY = "afd3f31c472731bed0074b6a14cbf7f1"
-    private var weatherURL: String = "https://api.openweathermap.org/data/2.5/weather?q=Voronezh&appid=$API_KEY&units=metric"
+    private lateinit var weatherURL: String
 
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -81,16 +76,8 @@ class PlaceholderFragment : Fragment() {
     }
 
     companion object {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
         private const val ARG_SECTION_NUMBER = "section_number"
 
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
         @JvmStatic
         fun newInstance(sectionNumber: Int): PlaceholderFragment {
             return PlaceholderFragment().apply {
